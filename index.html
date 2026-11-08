@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kopi Online</title>
+    <link rel="icon" href="Logo_Jualan.jpg" />
+    <style>
+    :root {
+      --bg: #f6ede3;
+      --card: #fffaf4;
+      --text: #3b2416;
+      --muted: #7a5c48;
+      --brown: #6f4e37;
+      --dark: #3b2416;
+      --accent: #c8925b;
+      --cream: #efdcc6;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1e1510;
+        --card: #2b1f17;
+        --text: #f3e6d8;
+        --muted: #c3a68c;
+        --brown: #c8925b;
+        --dark: #120c08;
+        --accent: #e0a96d;
+        --cream: #3a2a1e;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      background: var(--dark);
+      color: #f3e6d8;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #f3e6d8;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e0a96d;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 90px 6%;
+      background: linear-gradient(135deg, #3b2416, #6f4e37 60%, #9a6b43);
+      color: #fff;
+    }
+
+    .hero .cup {
+      font-size: 4rem;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      margin: 10px 0;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero p {
+      max-width: 520px;
+      margin: 0 auto 26px;
+      opacity: 0.9;
+      animation: fadeUp 1s 0.3s ease both;
+    }
+
+    /* Tombol */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #e0a96d;
+      color: #3b2416;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      background: #f0bd84;
+      transform: translateY(-3px);
+    }
+
+    /* Section & Menu */
+    section {
+      padding: 70px 6%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 26px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(59, 36, 22, 0.15);
+      transition: transform 0.35s, box-shadow 0.35s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 28px rgba(59, 36, 22, 0.28);
+    }
+
+    .img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      background: var(--cream);
+      transition: transform 0.4s;
+    }
+
+    .card:hover .img {
+      transform: scale(1.12);
+    }
+
+    .card .body {
+      padding: 18px;
+    }
+
+    .card h3 {
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .price {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    /* Tentang & Footer */
+    .about {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 620px;
+      margin: auto;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #d9c3ab;
+      text-align: center;
+      padding: 24px;
+    }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="Logo_Jualan.jpg" alt="Logo Kopi Online" width="50" height="32" />
+      <div class="logo">Kopi Online</div>
+      <div>
+        <a href="#menu">Menu</a>
+        <a href="#tentang">Tentang</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img src="Logo_Jualan.jpg" alt="Logo Kopi Online" width="500" height="300" />
+      <h1>Kopi Online</h1>
+      <p>Cerita Tentang Kesegaran</p>
+      <a href="#menu" class="btn">Lihat Menu</a>
+    </header>
+
+    <section id="menu">
+      <h2>Menu Kopi Online</h2>
+      <p class="sub">Kenali minuman dan makanan kami</p>
+
+      <div class="menu">
+        <div class="card">
+          <img class="img" src="marie.jpeg" alt="Marie Fresh Milk" />
+          <div class="body">
+            <h3>Marie Fresh Milk</h3>
+            <p>"Marie Fresh Milk adalah minuman susu segar dingin yang dicampur dengan biskuit Marie yang dihaluskan. Rasanya manis lembut, creamy, dan ada aroma biskuit yang gurih-manis. Tekstur remah biskuitnya membuat minuman ini terasa seperti dessert dalam gelas." </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="img" src="sugar.png" alt="Kopi Brown Sugar" />
+          <div class="body">
+            <h3>Kopi Brown Sugar</h3>
+            <p>Kopi Brown Sugar adalah minuman kopi susu dengan perpaduan rasa manis legit dari sirup gula aren atau gula cokelat (brown sugar), gurihnya susu segar, dan pahit khas espresso. Rasa manisnya terasa karamel dan sedikit smoky, 
+              sehingga lebih kaya dan tidak terlalu tajam dibanding pemanis biasa. 
+              Minuman ini biasanya disajikan dingin dengan es batu. Sirup brown sugar dituang di dasar gelas hingga membentuk lapisan cokelat pekat yang menempel di dinding gelas, lalu dilengkapi susu dan espresso di atasnya. Hasilnya adalah tampilan berlapis yang menarik dan cocok untuk difoto."</p>
+            </div>
+        </div>
+
+        <div class="card">
+          <img class="img" src="oreo.jpeg" alt="Oreo" />
+          <div class="body">
+            <h3>Oreo With Fresh Milk</h3>
+            <p>Susu segar dingin yang creamy dengan remahan biskuit Oreo yang dihaluskan, lalu dihias beberapa keping Oreo utuh di atas gelas. Rasanya manis, lembut, dan ada sensasi cokelat renyah dari biskuitnya. Cocok jadi minuman penyegar sekaligus dessert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tentang" class="about">
+      <h2>Tentang Saya</h2>
+      <img src="DiriSendiri.png" alt="Diri Sendiri" class="foto-saya">
+      <h3>Nama: Gabriel Julian Tantri</h3>
+      <p>Lahir: 02 Oktober 2007</p>
+      <p>Prodi: D3 Sistem Informasi</p>
+    </section>
+
+    <footer>© 2026 Kopi Online · Terima kasih sudah mampir ☕</footer>
+  </body>
+</html>
